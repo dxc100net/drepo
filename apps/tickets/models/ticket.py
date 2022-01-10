@@ -73,6 +73,7 @@ class Ticket(CommonModelMixin, OrgModelMixin):
         'TicketFlow', related_name='tickets', on_delete=models.SET_NULL, null=True,
         verbose_name=_("TicketFlow")
     )
+    serial_num = models.CharField(max_length=256, unique=True, null=True, verbose_name=_('Serial number'))
 
     class Meta:
         ordering = ('-date_created',)
